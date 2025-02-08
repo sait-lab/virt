@@ -58,12 +58,14 @@ Before you start thinking about turning off VBS, you need to find out if it's on
 
 (Image credit: Future)
 
-**If the entry does not exist, create a new one** with the key EnableVirtualizationBasedSecurity, value (DWORD 32-bit) 0.
+**If the entry does not exist, create a new one** with the key **EnableVirtualizationBasedSecurity**, value (DWORD 32-bit) 0.
 
 <img src="./How.to.Disable.VBS.assets/image-20240510012638425.png" alt="image-20240510012638425" style="zoom: 50%;" />
 
-8. **Close regedit** and **reboot your PC**.
-9. **Check system information again** to see if Virtualization Based Security is listed as  "not enabled." 
+8. Reset **WindowsHello**.
+   ![win-hello](./How.to.Disable.VBS.assets/win-hello.webp) 
+9. **Close regedit** and **reboot your PC**.
+10. **Check system information again** to see if Virtualization Based Security is listed as  "not enabled." 
    <img src="./How.to.Disable.VBS.assets/image-20240510013201871.png" alt="image-20240510013201871" style="zoom:33%;" />
 
 (Image credit: Future)
