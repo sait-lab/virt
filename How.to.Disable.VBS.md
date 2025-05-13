@@ -90,6 +90,9 @@ If you still see that VBS is running, you can get rid of it by uninstalling the 
 (Image credit: Future)
 
 3. **Reboot** your PC.
-4. **Check system information** again to make sure virtualization based security is listed as "not enabled."
-5. **If your PC vendor is Lenovo, you may see VBS status is “Enabled but not running”. This is also acceptable.**
-6. **If your PC vendor is Lenovo, after trying ALL the steps mentioned above and VBS is still enabled, you may need to perform a clean installation of Windows.**
+4. Download and unzip Device Guard and Credential Guard hardware readiness tool from https://www.microsoft.com/en-us/download/details.aspx?id=53337
+5. Start PowerShell as an Administrator. `Set-ExecutionPolicy RemoteSigned` answer `Y`
+6. Enter the folder that contains unzipped Device Guard and Credential Guard hardware readiness tool, then run `.\DG_Readiness_Tool_v3.6.ps1 -Disable`
+7. **Check system information** again to make sure virtualization based security is listed as "not enabled."
+8. **If your PC vendor is Lenovo, you may see VBS status is “Enabled but not running”. This is also acceptable.**
+9. **If your PC vendor is Lenovo, after trying ALL the steps mentioned above and VBS is still enabled, you may need to perform a clean installation of Windows.**
