@@ -24,6 +24,10 @@ Open Settings -> Windows updates.
 
 If you are not running Windows Pro/Enterprise/Education edition, some of these options will not work.
 
+Get Windows 11 Education Edition for free: https://azureforeducation.microsoft.com/devtools
+
+https://portal.azure.com/#view/Microsoft_Azure_Education/EducationMenuBlade/~/software
+
 ## How to Check if VBS is Enabled in Windows 11 or 10
 
 https://www.tomshardware.com/how-to/disable-vbs-windows-11
