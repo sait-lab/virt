@@ -18,15 +18,13 @@ Opening the task manager -> performance -> CPU. Confirm your devices virtualizat
 
 ![image-20250527132325985](./How.to.Disable.VBS.assets/image-20250527132325985.png)
 
-## Confirm Your Windows is Pro/Enterprise/Education Version and is Fully Patched
+## Confirm Your Windows is Pro/Enterprise/Education Edition and is Fully Patched
 
 Open Settings -> Windows updates.
 
-If you are not running Windows Pro/Enterprise/Education edition, some of these options will not work.
+If you are not running Windows Pro/Enterprise/Education edition, get Windows 11 Education Edition for free. Log into https://azureforeducation.microsoft.com/devtools
 
-Get Windows 11 Education Edition for free: https://azureforeducation.microsoft.com/devtools
-
-https://portal.azure.com/#view/Microsoft_Azure_Education/EducationMenuBlade/~/software
+Find Windows 11 Education here: https://portal.azure.com/#view/Microsoft_Azure_Education/EducationMenuBlade/~/software
 
 ## How to Check if VBS is Enabled in Windows 11 or 10
 
