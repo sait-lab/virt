@@ -117,31 +117,33 @@ If you still see that VBS is running, you can get rid of it by uninstalling the 
 >
 > **Please note that using this option will disable features on your laptop like fingerprint scanning and other biometric devices**
 
-1. Download and unzip Device Guard and Credential Guard hardware readiness tool from https://www.microsoft.com/en-us/download/details.aspx?id=53337
+1. If you don't know how to unzip a `.zip` file, watch this: https://www.youtube.com/watch?v=gFhfrPMy6BY
 
-2. Start PowerShell as an **Administrator**.
+2. Download and unzip Device Guard and Credential Guard hardware readiness tool from https://www.microsoft.com/en-us/download/details.aspx?id=53337
+
+3. Start PowerShell as an **Administrator**.
    ````powershell
    Set-ExecutionPolicy RemoteSigned
    ````
 
    Answer `Y` when prompted.
 
-3. Enter the folder that contains **unzipped** Device Guard and Credential Guard hardware readiness tool, then run:
+4. Enter the folder that contains **unzipped** Device Guard and Credential Guard hardware readiness tool, then run:
    ````
    powershell.exe -ExecutionPolicy Bypass -File .\DG_Readiness_Tool_v3.6.ps1 -Disable
    ````
-4. After running you will need to reboot your computer, during the reboot process you will be asked if you want to disable credential guard and device guard.
+5. After running you will need to reboot your computer, during the reboot process you will be asked if you want to disable credential guard and device guard.
 
    ![dis-cred-guard](./How.to.Disable.VBS.assets/dis-cred-guard.jpg)  
 
-5. Press **F3** to disable Credential Guard
+6. Press **F3** to disable Credential Guard
 
    ![dg-dis-vbs](./How.to.Disable.VBS.assets/dg-dis-vbs.jpg)  
 
-6. Press **F3** to disable Virtualization Based Security
+7. Press **F3** to disable Virtualization Based Security
 
-7. Reboot
-8. **Check system information** again to make sure virtualization based security is listed as "not enabled."
+8. Reboot
+9. **Check system information** again to make sure virtualization based security is listed as "not enabled."
 
 ---
 
