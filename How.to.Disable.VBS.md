@@ -8,9 +8,17 @@ The error when powering on the machine looks like this (if using AMD, the text w
 
 <img src="./How.to.Disable.VBS.assets/image-20250527132019280.png" alt="image-20250527132019280" style="zoom: 50%;" />
 
+<img src="./How.to.Disable.VBS.assets/amd-v-err-msg.png" alt="amd-v-err-msg" style="zoom:50%;" />
+
 > [!IMPORTANT]
 >
 > Please follow the resolution steps, while making sure to reboot where instructed and to test if the VM is working **BETWEEN each REBOOT** step.
+
+> [!WARNING]
+>
+> Disabling VBS is not a quick or simple process. Seriously, take your time and stay **patient**, very very very **PATIENT**. Patience now saves hours of pain later. **Resist the urge to jump ahead** or gloss over sections. Read **every single word** of these instructions carefully before you start.
+
+Virtualization-Based Security (VBS) frequently re-enables itself after a reboot on Windows 11 because multiple, redundant security layers (Group Policy, Registry, Core Isolation, and BIOS) are configured to keep it on, particularly after Windows updates. To permanently disable VBS, you must disable all its interconnected components simultaneously, as disabling just one (like Memory Integrity) will cause it to reactivate.
 
 ## Confirm your system Intel VT-x or AMD-V is active
 
@@ -47,7 +55,7 @@ Before you start thinking about turning off VBS, you need to find out if it's on
 
 (Image credit: Future)
 
-**2. Toggle Memory Integrity to off**, if it was on. If it is not on, skip ahead to step 6.
+**2. Toggle Memory Integrity to off**, if it was on. If it is not on, skip ahead to step 5.
 <img src="./How.to.Disable.VBS.assets/image-20240510012918600.png" alt="image-20240510012918600" style="zoom:50%;" /> 
 
 (Image credit: Future)
@@ -58,17 +66,20 @@ Before you start thinking about turning off VBS, you need to find out if it's on
 
 (Image credit: Future)
 
-4. **Check system info** again to see if virtualization-based security is listed as "not enabled." If so, you are done. If not, go to step 6 where you'll disable VBS in the registry.
+4. **Check system info** again to see if virtualization-based security is listed as "not enabled." Reboot again and check if it's still "not enabled". If so, you are done. If not, move on to disable VBS in the GPO in the next step.
    <img src="./How.to.Disable.VBS.assets/image-20240510012822153.png" alt="image-20240510012822153" style="zoom:50%;" />
 
 (Image credit: Future)
 
-5. **Open regedit**. The easiest way is by hitting Windows + R, entering regedit in the text box and click Ok.
+5. **Open gpedit.msc**. The easiest way is by hitting Windows + R, entering `gpedit.msc` in the text box and click OK.
+6. Navigate to: **Computer Configuration > Administrative Templates > System > Device Guard**, Set **Turn On Virtualization Based Security** to **Disabled**.
+   ![gpedit-dev-guard](./How.to.Disable.VBS.assets/gpedit-dev-guard.webp) 
+7. **Open regedit**. The easiest way is by hitting Windows + R, entering `regedit` in the text box and click OK.
    <img src="./How.to.Disable.VBS.assets/image-20240510013031251.png" alt="image-20240510013031251" style="zoom:33%;" />
 
 (Image credit: Future)
 
-6. **Navigate to HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\DeviceGuard.**
+6. **Navigate to HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\DeviceGuard.** The **EnableVirtualizationBasedSecurity** entry may or may not exist. If the entry exists, set it to 0. If the entry does NOT exist, create a new one and set it to 0. If you don't understand this instruction, read the next step carefully.
    <img src="./How.to.Disable.VBS.assets/image-20240510013053069.png" alt="image-20240510013053069" style="zoom: 50%;" />
 
 (Image credit: Future)
@@ -117,7 +128,7 @@ If you still see that VBS is running, you can get rid of it by uninstalling the 
 >
 > **Please note that using this option will disable features on your laptop like fingerprint scanning and other biometric devices**
 
-1. If you don't know how to unzip a `.zip` file, watch this: https://www.youtube.com/watch?v=gFhfrPMy6BY
+1. If you don't know how to unzip a `.zip` file, watch this: https://www.youtube.com/watch?v=gFhfrPMy6BY. [7zip](https://www.7-zip.org/download.html) is recommended for zipping and unzipping.
 
 2. Download and unzip Device Guard and Credential Guard hardware readiness tool from https://www.microsoft.com/en-us/download/details.aspx?id=53337
 
