@@ -28,11 +28,13 @@ Opening the task manager -> performance -> CPU. Confirm your devices virtualizat
 
 ## Confirm Your Windows is Pro/Enterprise/Education Edition and is Fully Patched
 
-Open Settings -> Windows updates.
+> [!IMPORTANT]
+>
+> If you're using Windows **Home Edition**, you might be able to disable VBS, but it will likely be **re-enabled after a reboot**. Windows Home Edition does not include gpedit.msc (Group Policy Editor).
 
-If you are not running Windows Pro/Enterprise/Education edition, get Windows 11 Education Edition for free. Log into https://azureforeducation.microsoft.com/devtools
+Check your Windows Edition: Open Settings -> System -> About, scroll down to find Windows specifications -> Edition.
 
-Find Windows 11 Education here: https://portal.azure.com/#view/Microsoft_Azure_Education/EducationMenuBlade/~/software
+If you are not running Windows **Pro/Enterprise/Education edition**, get Windows 11 Education Edition for **free** at https://azureforeducation.microsoft.com/devtools. Register an account with your SAIT email address. After successful registration, you can find Windows 11 Education here: https://portal.azure.com/#view/Microsoft_Azure_Education/EducationMenuBlade/~/software.
 
 ## How to Check if VBS is Enabled in Windows 11 or 10
 
